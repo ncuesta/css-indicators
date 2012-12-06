@@ -1,15 +1,19 @@
-# CSS
+SRC 		 = src
+SRC_FILE = $(SRC)/indicator.scss
+OUTPUT   = build
+
+clean:
+				@rm -f $(OUTPUT)/*.css
+
 css:
-		sass --style expanded src/indicator.default.scss:build/indicator.css
+				sass --style expanded $(SRC_FILE):$(OUTPUT)/indicator.css
 
 css-min:
-		sass --style compressed src/indicator.default.scss:build/indicator.min.css
+				sass --update --style compressed $(SRC_FILE):$(OUTPUT)/indicator.min.css
 
-watch:
-		sass --watch --style compressed src/indicator.default.scss:build/indicator.min.css
+all:
+				make clean
+				make css
+				make css-min
 
-release:
-		make css
-		make css-min
-
-.PHONY: css css-min watch release
+.PHONY: all clean css css-min
