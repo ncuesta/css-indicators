@@ -1,18 +1,14 @@
 @charset "utf-8";
 
-/*!
- * Pure CSS3 indicator styles.
- * Default theme.
- *
- * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
- */
+// _indicator.default.scss
+//
+// Pure CSS3 indicator styles - Default theme.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
 
 @import "partials/mixins";
 
-
-/* ------------------------------------------------------------------ *
- *                             Variables                              *
- * ------------------------------------------------------------------ */
+// Variables
 $height:        64px !default;  // Container height
 $width:         64px !default;  // Container width
 $duration:      1.5s !default;  // Duration for an animation loop
@@ -22,9 +18,7 @@ $line-width:    4px  !default;  // Bars width
 $tail:          15%;            // Cut-off percentage of the bar's tail
 $bar-height:    50% - $tail;    // Height for each bar
 
-/* ------------------------------------------------------------------ *
- *                           Custom mixins                            *
- * ------------------------------------------------------------------ */
+// Custom mixins
 @mixin indicator-size($bars: 9) {
   $rotation-step: 360 / $bars;
   $lighten-step:  1 / $bars;
@@ -39,9 +33,9 @@ $bar-height:    50% - $tail;    // Height for each bar
   }
 }
 
-/* ------------------------------------------------------------------ *
- *                   Animation keyframes definition                   *
- * ------------------------------------------------------------------ */
+// ------------------------------------------------------------------
+//                   Animation keyframes definition                  
+// ------------------------------------------------------------------
 @-webkit-keyframes full-rotation {
   0%   { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -59,9 +53,9 @@ $bar-height:    50% - $tail;    // Height for each bar
   100% { transform: rotate(360deg); }
 }
 
-/* ------------------------------------------------------------------ *
- *                      Actual styles definition                      *
- * ------------------------------------------------------------------ */
+// ------------------------------------------------------------------
+//                  Default theme styles definition                  
+// ------------------------------------------------------------------
 .indicator {
   @include animation(full-rotation, $duration, infinite);
   @include box-sizing;

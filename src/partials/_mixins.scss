@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-/*!
- * Common mixins.
- *
- * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
- */
+// _mixins.scss
+//
+// Common mixins for the indicators.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
 
 @mixin rotate($degrees) {
   -webkit-transform: rotate(#{$degrees}deg);
