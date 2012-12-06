@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/*!
+ * Common mixins.
+ *
+ * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+ */
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate(#{$degrees}deg);
+     -moz-transform: rotate(#{$degrees}deg);
+      -ms-transform: rotate(#{$degrees}deg);
+       -o-transform: rotate(#{$degrees}deg);
+          transform: rotate(#{$degrees}deg);
+}
+
+@mixin translate($x: 0, $y: 0) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+
+@mixin rotate-translate($degrees: 0, $x: 0, $y: 0) {
+  -webkit-transform: rotate(#{$degrees}deg) translate($x, $y);
+     -moz-transform: rotate(#{$degrees}deg) translate($x, $y);
+      -ms-transform: rotate(#{$degrees}deg) translate($x, $y);
+       -o-transform: rotate(#{$degrees}deg) translate($x, $y);
+          transform: rotate(#{$degrees}deg) translate($x, $y);
+  
+}
+
+@mixin transform-origin($x: 50%, $y: 50%, $z: 0) {
+  -webkit-transform-origin: $x $y $z;
+     -moz-transform-origin: $x $y $z;
+      -ms-transform-origin: $x $y $z;
+       -o-transform-origin: $x $y $z;
+          transform-origin: $x $y $z;
+}
+
+@mixin animation($name, $duration: 1s, $loop: infinite, $easing: linear) {
+  -webkit-animation: $name $duration $loop;
+     -moz-animation: $name $duration $loop;
+       -o-animation: $name $duration $loop;
+          animation: $name $duration $loop;
+  -webkit-animation-timing-function: $easing;
+     -moz-animation-timing-function: $easing;
+       -o-animation-timing-function: $easing;
+          animation-timing-function: $easing;
+}
+
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+       -o-animation-delay: $delay;
+          animation-delay: $delay;
+}
+
+@mixin box-sizing($sizing: border-box) {
+  -webkit-box-sizing: $sizing;
+     -moz-box-sizing: $sizing;
+          box-sizing: $sizing;
+}

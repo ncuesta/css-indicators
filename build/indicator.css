@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /*
  * Pure CSS3 indicator styles.
+ * Default theme.
+ *
+ * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+ */
+/*
+ * Common mixins.
  *
  * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
  */
@@ -74,9 +80,9 @@
   bottom: 50%;
   left: 50%;
   height: 35%;
-  width: 4.8px;
+  width: 4px;
   background: #555555;
-  border-radius: 4.8px;
+  border-radius: 4px;
 }
 .indicator > *:nth-child(1) {
   -webkit-transform: rotate(40deg) translate(0, -15%);

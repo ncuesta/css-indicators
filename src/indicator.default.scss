@@ -1,95 +1,47 @@
 @charset "utf-8";
+
 /*!
  * Pure CSS3 indicator styles.
+ * Default theme.
  *
  * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
  */
- 
-// Variables
-$height:        64px !default;
-$width:         64px !default;
-$duration:      1.5s !default;
 
-$bars:          9    !default;
-$color:         #555 !default;
-$line-width:    max($width * .075, 4px);
+@import "partials/mixins";
 
-$tail:          15%;
-$bar-height:    50% - $tail;
 
-// Mixins
-@mixin rotate($degrees) {
-  -webkit-transform: rotate(#{$degrees}deg);
-     -moz-transform: rotate(#{$degrees}deg);
-      -ms-transform: rotate(#{$degrees}deg);
-       -o-transform: rotate(#{$degrees}deg);
-          transform: rotate(#{$degrees}deg);
-}
+/* ------------------------------------------------------------------ *
+ *                             Variables                              *
+ * ------------------------------------------------------------------ */
+$height:        64px !default;  // Container height
+$width:         64px !default;  // Container width
+$duration:      1.5s !default;  // Duration for an animation loop
+$color:         #555 !default;  // Bars color
+$line-width:    4px  !default;  // Bars width
 
-@mixin translate($x: 0, $y: 0) {
-  -webkit-transform: translate($x, $y);
-     -moz-transform: translate($x, $y);
-      -ms-transform: translate($x, $y);
-       -o-transform: translate($x, $y);
-          transform: translate($x, $y);
-}
+$tail:          15%;            // Cut-off percentage of the bar's tail
+$bar-height:    50% - $tail;    // Height for each bar
 
-@mixin rotate-translate($degrees: 0, $x: 0, $y: 0) {
-  -webkit-transform: rotate(#{$degrees}deg) translate($x, $y);
-     -moz-transform: rotate(#{$degrees}deg) translate($x, $y);
-      -ms-transform: rotate(#{$degrees}deg) translate($x, $y);
-       -o-transform: rotate(#{$degrees}deg) translate($x, $y);
-          transform: rotate(#{$degrees}deg) translate($x, $y);
-  
-}
-
-@mixin transform-origin($x: 50%, $y: 50%, $z: 0) {
-  -webkit-transform-origin: $x $y $z;
-     -moz-transform-origin: $x $y $z;
-      -ms-transform-origin: $x $y $z;
-       -o-transform-origin: $x $y $z;
-          transform-origin: $x $y $z;
-}
-
-@mixin animation($name, $duration: 1s, $loop: infinite, $easing: linear) {
-  -webkit-animation: $name $duration $loop;
-     -moz-animation: $name $duration $loop;
-       -o-animation: $name $duration $loop;
-          animation: $name $duration $loop;
-  -webkit-animation-timing-function: $easing;
-     -moz-animation-timing-function: $easing;
-       -o-animation-timing-function: $easing;
-          animation-timing-function: $easing;
-}
-
-@mixin animation-delay($delay) {
-  -webkit-animation-delay: $delay;
-     -moz-animation-delay: $delay;
-       -o-animation-delay: $delay;
-          animation-delay: $delay;
-}
-
-@mixin box-sizing($sizing: border-box) {
-  -webkit-box-sizing: $sizing;
-     -moz-box-sizing: $sizing;
-          box-sizing: $sizing;
-}
-
-@mixin indicator-size($bars) {
+/* ------------------------------------------------------------------ *
+ *                           Custom mixins                            *
+ * ------------------------------------------------------------------ */
+@mixin indicator-size($bars: 9) {
   $rotation-step: 360 / $bars;
   $lighten-step:  1 / $bars;
   $bars:          round($bars);
   
   @for $index from 1 through $bars {
     &:nth-child(#{$index}) {
-      @include rotate-translate($index * $rotation-step, $y: -$tail);
+      @include rotate-translate($index * $rotation-step, $y: -$tail * 3);
       
       background: transparentize($color, 1 - $index * $lighten-step);
     }
   }
 }
 
-// Animation keyframes definition
+/* ------------------------------------------------------------------ *
+ *                   Animation keyframes definition                   *
+ * ------------------------------------------------------------------ */
 @-webkit-keyframes full-rotation {
   0%   { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -107,7 +59,9 @@ $bar-height:    50% - $tail;
   100% { transform: rotate(360deg); }
 }
 
-// Styles
+/* ------------------------------------------------------------------ *
+ *                      Actual styles definition                      *
+ * ------------------------------------------------------------------ */
 .indicator {
   @include animation(full-rotation, $duration, infinite);
   @include box-sizing;
@@ -119,7 +73,7 @@ $bar-height:    50% - $tail;
    
   > * {
     @include transform-origin($y: 100%);
-    @include indicator-size($bars);
+    @include indicator-size;
     @include box-sizing;
     
     position: absolute;
