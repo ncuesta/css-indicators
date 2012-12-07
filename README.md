@@ -23,6 +23,15 @@ And then add the needed markup for the themed indicator (see below).
 
 ## Indicator themes
 
+### Global CSS class names
+
+First of all, you should know that every indicator must have the `.indicator` class
+name.
+
+For every indicator theme you can specify its size via a class name. This is optional,
+and will default to a sensible value. Available sizes are: `.small`, `.medium`,
+`.normal` (the default size), `.large` and `.x-large`.
+
 ### Spinner
 
 This theme displays an animated spinner with bars.
@@ -34,7 +43,7 @@ described in the next section might change for your particular use case):
 
 ```html
 <!-- The spinner needs a container element -->
-<span class="spinner normal bars-9">
+<span class="indicator spinner normal bars-9">
     <!-- And a set of bars to draw, in this case 9 as .bars-9 requires -->
     <span class="bar"></span>
     <span class="bar"></span>
@@ -50,15 +59,33 @@ described in the next section might change for your particular use case):
 
 #### The CSS
 
-This indicator uses the `.spinner` class name, and relies on two groups of classes
-to define its particular looks: one for the size and another one for the number of
-bars it should show.
-
-For the size (this one is optional) you can either use: `.small`, `.medium`,
-`.normal` (the default size), `.large` and `.x-large`.
+This indicator uses the `.spinner` class name, and relies on a class that states
+the number of bars it should show.
 
 For the number of bars you must use a class that indicates how many bar elements
 the spinner has in the form `.bars-X`, where `X` is a number between `3` and `36`.
+
+### Bouncer
+
+This theme displays a nice little ball bouncing up and down in a neverending loop.
+
+#### The markup
+
+This indicator requires the following markup (please note that the specific classes
+described in the next section might change for your particular use case):
+
+```html
+<!-- The bouncer needs a container element -->
+<span class="indicator bouncer normal with-floor">
+    <!-- And the ball that will be bouncing inside the container -->
+    <span class="ball"></span>
+</span>
+```
+
+#### The CSS
+
+This indicator uses the `.bouncer` class and can have a floor to give a more
+"realistic" look via the optional `.with-floor` class.
 
 ## License
 

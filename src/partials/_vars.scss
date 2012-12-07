@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// _vars.scss
+//
+// Pure CSS3 indicator styles - Variables definition.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+// Global variables
+$base-class:    "indicator"; // Base class for all indicators
+$height:        64px;        // Container height
+$width:         64px;        // Container width
+$duration:      1.5s;        // Duration of the animation loop
+$color:         #555;        // Fill color
+$line-width:    4px;         // Lines width

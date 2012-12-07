@@ -6,109 +6,70 @@
 //
 // @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
 
+@import "partials/vars";
 @import "partials/mixins";
 
-// Variables
-$height:        64px !default;  // Container height
-$width:         64px !default;  // Container width
-$duration:      1.5s !default;  // Duration for an animation loop
-$color:         #555 !default;  // Bars color
-$line-width:    4px  !default;  // Bars width
-
+// Local Variables
 $tail:          15%;            // Cut-off percentage of the bar's tail
 $bar-height:    50% - $tail;    // Height for each bar
 
 // Custom mixins
 @mixin spinner-size($bars: 9) {
-  $rotation-step: 360 / $bars;
-  $lighten-step:  1 / $bars;
-  $bars:          round($bars);
+    $rotation-step: 360 / $bars;
+    $lighten-step:  1 / $bars;
+    $bars:          round($bars);
   
-  @for $index from 1 through $bars {
-    &:nth-child(#{$index}) {
-      @include rotate-translate($index * $rotation-step, $y: -$tail * 3);
-      
-      background: transparentize($color, 1 - $index * $lighten-step);
+    @for $index from 1 through $bars {
+        &:nth-child(#{$index}) {
+            @include rotate-translate($index * $rotation-step, $y: -$tail * 3);
+            background: transparentize($color, 1 - $index * $lighten-step);
+        }
     }
-  }
 }
 
 // ------------------------------------------------------------------
 //                   Animation keyframes definition                  
 // ------------------------------------------------------------------
 @-webkit-keyframes full-rotation {
-  0%   { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
 }
 @-moz-keyframes full-rotation {
-  0%   { -moz-transform: rotate(0deg); }
-  100% { -moz-transform: rotate(360deg); }
+    0%   { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); }
 }
 @-o-keyframes full-rotation {
-  0%   { -o-transform: rotate(0deg); }
-  100% { -o-transform: rotate(360deg); }
+    0%   { -o-transform: rotate(0deg); }
+    100% { -o-transform: rotate(360deg); }
 }
 @keyframes full-rotation {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 // ------------------------------------------------------------------
-//                  Default theme styles definition                  
+//                  Spinner theme styles definition                  
 // ------------------------------------------------------------------
-.spinner {
-  @include animation(full-rotation, $duration, infinite);
-  @include box-sizing;
+.#{$base-class}.spinner {
+    @include animation(full-rotation, $duration, infinite);
 
-  position: relative;
-  display: inline-block;
-  height: $height;
-  width: $width;
-   
-  > * {
-    @include transform-origin($y: 100%);
-    @include spinner-size;
-    @include box-sizing;
-    
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    height: $bar-height;
-    width: $line-width;
-    background: $color;
-    border-radius: $line-width;
-  }
-  
-  // Bars count definition
-  @for $bars-count from 3 through 36 {
-    &.bars-#{$bars-count} > * {
-      @include spinner-size($bars-count);
+    > * {
+        @include transform-origin($y: 100%);
+        @include spinner-size;
+        @include box-sizing;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        height: $bar-height;
+        width: $line-width;
+        background: $color;
+        border-radius: $line-width;
     }
-  }
   
-  // General sizes definition
-  &.small {
-    height: $height / 4;
-    width: $width / 4;
-  }
-  
-  &.medium {
-    height: $height / 2;
-    width: $width / 2;
-  }
-
-  &.normal {
-    height: $height;
-    width: $width;
-  }
-
-  &.large {
-    height: $height * 2;
-    width: $width * 2;
-  }
-
-  &.x-large {
-    height: $height * 4;
-    width: $width * 4;
-  }
+    // Bars count definition
+    @for $bars-count from 3 through 36 {
+        &.bars-#{$bars-count} > * {
+            @include spinner-size($bars-count);
+        }
+    }
 }

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+// _indicator.base.scss
+//
+// Pure CSS3 indicator styles - Base definitions.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+@import "partials/vars";
+@import "partials/mixins";
+
+.#{$base-class} {
+    @include box-sizing;
+    display:  inline-block;
+    position: relative;
+    height:   $height;
+    width:    $width;
+
+    // General sizes definition
+    &.small {
+        height: $height / 4;
+        width:  $width / 4;
+    }
+
+    &.medium {
+        height: $height / 2;
+        width:  $width / 2;
+    }
+
+    &.normal {
+        height: $height;
+        width:  $width;
+    }
+
+    &.large {
+        height: $height * 2;
+        width:  $width * 2;
+    }
+
+    &.x-large {
+        height: $height * 4;
+        width:  $width * 4;
+    }
+}

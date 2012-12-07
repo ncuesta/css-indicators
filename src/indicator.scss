@@ -6,4 +6,9 @@
  * @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
  */
 
+// Base definitions
+@import "indicator.base";
+
+// Themes
 @import "indicator.spinner";
+@import "indicator.bouncer";

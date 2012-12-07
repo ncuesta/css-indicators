@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+// _indicator.bouncer.scss
+//
+// Pure CSS3 indicator styles - Bouncer theme.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+@import "partials/vars";
+@import "partials/mixins";
+
+// ------------------------------------------------------------------
+//                   Animation keyframes definition                  
+// ------------------------------------------------------------------
+@-webkit-keyframes bouncey {
+    0%, 50%, 100% { -webkit-transform: translateY(0); }
+    20%, 70%      { -webkit-transform: translateY(300%) scaleY(0.85); }
+    25%, 75%      { -webkit-transform: translateY(325%) scaleY(0.5); }
+    30%, 80%      { -webkit-transform: translateY(300%) scaleY(0.85); }
+}
+@-moz-keyframes bouncey {
+    0%, 50%, 100% { -moz-transform: translateY(0); }
+    20%, 70%      { -moz-transform: translateY(300%) scaleY(0.85); }
+    25%, 75%      { -moz-transform: translateY(325%) scaleY(0.5); }
+    30%, 80%      { -moz-transform: translateY(300%) scaleY(0.85); }
+}
+@-o-keyframes bouncey {
+    0%, 50%, 100% { -o-transform: translateY(0); }
+    20%, 70%      { -o-transform: translateY(300%) scaleY(0.85); }
+    25%, 75%      { -o-transform: translateY(325%) scaleY(0.5); }
+    30%, 80%      { -o-transform: translateY(300%) scaleY(0.85); }
+}
+@keyframes bouncey {
+    0%, 50%, 100% { transform: translateY(0); }
+    20%, 70%      { transform: translateY(300%) scaleY(0.85); }
+    25%, 75%      { transform: translateY(325%) scaleY(0.5); }
+    30%, 80%      { transform: translateY(300%) scaleY(0.85); }
+}
+
+// ------------------------------------------------------------------
+//                  Bouncer theme styles definition                  
+// ------------------------------------------------------------------
+.#{$base-class}.bouncer {
+    text-align: center;
+    overflow:   hidden;
+
+    .ball {
+        @include animation(bouncey, $duration, infinite, ease-in);
+        display:        inline-block;
+        margin:         0 auto;
+        height:         25%;
+        width:          25%;
+        background:     $color;
+        vertical-align: top;
+        border-radius:  100%;
+    }
+
+    &.with-floor {
+        border-bottom: 1px solid lighten($color, 50%);
+    }
+}
