@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-// _indicator.default.scss
+// _indicator.spinner.scss
 //
-// Pure CSS3 indicator styles - Default theme.
+// Pure CSS3 indicator styles - Spinner theme.
 //
 // @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
 
@@ -19,7 +19,7 @@ $tail:          15%;            // Cut-off percentage of the bar's tail
 $bar-height:    50% - $tail;    // Height for each bar
 
 // Custom mixins
-@mixin indicator-size($bars: 9) {
+@mixin spinner-size($bars: 9) {
   $rotation-step: 360 / $bars;
   $lighten-step:  1 / $bars;
   $bars:          round($bars);
@@ -56,7 +56,7 @@ $bar-height:    50% - $tail;    // Height for each bar
 // ------------------------------------------------------------------
 //                  Default theme styles definition                  
 // ------------------------------------------------------------------
-.indicator {
+.spinner {
   @include animation(full-rotation, $duration, infinite);
   @include box-sizing;
 
@@ -67,7 +67,7 @@ $bar-height:    50% - $tail;    // Height for each bar
    
   > * {
     @include transform-origin($y: 100%);
-    @include indicator-size;
+    @include spinner-size;
     @include box-sizing;
     
     position: absolute;
@@ -82,7 +82,7 @@ $bar-height:    50% - $tail;    // Height for each bar
   // Bars count definition
   @for $bars-count from 3 through 36 {
     &.bars-#{$bars-count} > * {
-      @include indicator-size($bars-count);
+      @include spinner-size($bars-count);
     }
   }
   
