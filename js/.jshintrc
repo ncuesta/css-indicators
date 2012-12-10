@@ -1,0 +1,12 @@
+{
+    "curly"     : true,
+    "forin"     : true,
+    "indent"    : 4,
+    "newcap"    : true,
+    "undef"     : true,
+    "unused"    : true,
+    "trailing"  : true,
+    "validthis" : true,
+    "browser"   : true,
+    "jquery"    : true
+}
