@@ -7,12 +7,16 @@
 </head>
 <body>
   <span id="my-indicator"></span>
+  <span id="my-nifty-indicator"></span>
+  <span id="my-other-indicator"></span>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="../js/css-indicator-generator.js"></script>
   <script>
     $(function() {
-      $('#my-indicator').indicator({ type: 'spinner', size: 'medium' });
+      $('#my-indicator').indicator();
+      $('#my-nifty-indicator').indicator('bouncer');
+      $('#my-other-indicator').indicator({ theme: 'bouncer', size: 'small' });
     });
   </script>
 </body>
