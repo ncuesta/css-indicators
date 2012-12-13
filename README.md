@@ -34,6 +34,7 @@ optionally specified with a couple of options.
 
 After you've included the CSS file for the indicators, you will need to add
 [the JS file](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicator-generator.js)
+or its [minified version](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicator-generator.min.js)
 to your jQuery-enabled page. **Remember to add it after your jQuery `<script>` tag!**
 
 Once you have included the JS file, you can then use it with any existing element on the page:
