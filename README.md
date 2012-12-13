@@ -19,7 +19,47 @@ Download either [the minified](https://raw.github.com/ncuesta/css-indicators/mas
 </html>
 ```
 
-And then add the needed markup for the themed indicator (see below).
+And then you can use the provided JS helper (in the form of a jQuery plugin) or add the
+needed markup for the themed indicator (see below).
+
+## jQuery plugin
+
+`css-indicators` comes bundled with a tiny but handy [jQuery](http://jquery.com) plugin.
+
+By using it, you won't have to go through the hassle of dealing with the correct markup
+for each indicator theme. You'll just have to do a `$('#my-indicator').indicator()`
+optionally specified with a couple of options.
+
+### Usage
+
+After you've included the CSS file for the indicators, you will need to add
+[the JS file](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicator-generator.js)
+to your jQuery-enabled page. **Remember to add it after your jQuery `<script>` tag!**
+
+Once you have included the JS file, you can then use it with any existing element on the page:
+
+```js
+jQuery(function($) {
+    // With the default options
+    $('#default-indicator').indicator();
+    //  -> Will produce a 'spinner', 'normal', with 9 bars.
+
+    // Only specifying the theme
+    $('#themed-indicator').indicator('bouncer');
+
+    // Providing a hash of options
+    $('#customized-indicator').indicator({ theme: 'bouncer', size: 'x-large' });
+});
+```
+
+### Available options
+
+The available options for the plugin are:
+
+* `theme`: The theme to use: `'spinner'` (default) or `'bouncer'`.
+* `size`: The size: `'small'`, `'medium'`, `'normal'` (default), `'large'`, `'x-large'`.
+* `extra`: Extra classes to define on the container. Defaults to `''` (an empty string).
+* `bars`:  Number of child bars to add to the `spinner` theme. Only valid for that theme. Defaults to `9`.
 
 ## Indicator themes
 
