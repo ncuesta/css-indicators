@@ -45,8 +45,4 @@
         background:     $color;
         border-radius:  100%;
     }
-
-    &.with-floor {
-        border-bottom: 1px solid lighten($color, 50%);
-    }
 }
