@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+// _indicator.pulsar.scss
+//
+// Pure CSS3 indicator styles - Pulsar theme.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+@import "partials/vars";
+@import "partials/mixins";
+
+// ------------------------------------------------------------------
+//                   Animation keyframes definition
+// ------------------------------------------------------------------
+@-webkit-keyframes pulsar {
+    0%, 100% { -webkit-transform: scale(1); }
+    50%      { -webkit-transform: scale(.25); }
+}
+@-moz-keyframes pulsar {
+    0%, 100% { -moz-transform: scale(1); }
+    50%      { -moz-transform: scale(.25); }
+}
+@-o-keyframes pulsar {
+    0%, 100% { -o-transform: scale(1); }
+    50%      { -o-transform: scale(.25); }
+}
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(.25); }
+}
+
+// ------------------------------------------------------------------
+//                  Pulsar theme styles definition
+// ------------------------------------------------------------------
+.#{$base-class}.pulsar {
+    text-align: center;
+    overflow:   hidden;
+
+    .ball {
+        @include animation(pulsar, $duration, infinite, linear);
+        display:        inline-block;
+        margin:         0 auto;
+        height:         100%;
+        width:          100%;
+        background:     $color;
+        border-radius:  100%;
+    }
+
+    &.with-floor {
+        border-bottom: 1px solid lighten($color, 50%);
+    }
+}

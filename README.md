@@ -49,7 +49,7 @@ jQuery(function($) {
     $('#themed-indicator').indicator('bouncer');
 
     // Providing a hash of options
-    $('#customized-indicator').indicator({ theme: 'bouncer', size: 'x-large' });
+    $('#customized-indicator').indicator({ theme: 'pulsar', size: 'x-large' });
 });
 ```
 
@@ -57,7 +57,7 @@ jQuery(function($) {
 
 The available options for the plugin are:
 
-* `theme`: The theme to use: `'spinner'` (default) or `'bouncer'`.
+* `theme`: The theme to use: `'spinner'` (default), `'bouncer'` or `'pulsar'`.
 * `size`: The size: `'small'`, `'medium'`, `'normal'` (default), `'large'`, `'x-large'`.
 * `extra`: Extra classes to define on the container. Defaults to `''` (an empty string).
 * `bars`:  Number of child bars to add to the `spinner` theme. Only valid for that theme. Defaults to `9`.
@@ -123,10 +123,26 @@ described in the next section might change for your particular use case):
 </span>
 ```
 
+### Pulsar
+
+This theme displays a nice little ball pulsing in a neverending loop.
+
+#### The markup
+
+This indicator requires the following markup (please note that the specific classes
+described in the next section might change for your particular use case):
+
+```html
+<!-- The pulsar needs a container element -->
+<span class="indicator pulsar normal">
+    <!-- And the ball that will be pulsing inside the container -->
+    <span class="ball"></span>
+</span>
+```
+
 #### The CSS
 
-This indicator uses the `.bouncer` class and can have a floor to give a more
-"realistic" look via the optional `.with-floor` class.
+This indicator uses the `.pulsar` class and has no further configuration through classes.
 
 ## License
 

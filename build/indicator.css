@@ -5574,3 +5574,67 @@
 .indicator.bouncer.with-floor {
   border-bottom: 1px solid #d4d4d4;
 }
+
+@-webkit-keyframes pulsar {
+  0%, 100% {
+    -webkit-transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.25);
+  }
+}
+
+@-moz-keyframes pulsar {
+  0%, 100% {
+    -moz-transform: scale(1);
+  }
+
+  50% {
+    -moz-transform: scale(0.25);
+  }
+}
+
+@-o-keyframes pulsar {
+  0%, 100% {
+    -o-transform: scale(1);
+  }
+
+  50% {
+    -o-transform: scale(0.25);
+  }
+}
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.25);
+  }
+}
+
+.indicator.pulsar {
+  text-align: center;
+  overflow: hidden;
+}
+.indicator.pulsar .ball {
+  -webkit-animation: pulsar 1.5s infinite;
+  -moz-animation: pulsar 1.5s infinite;
+  -o-animation: pulsar 1.5s infinite;
+  animation: pulsar 1.5s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  display: inline-block;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background: #555555;
+  border-radius: 100%;
+}
+.indicator.pulsar.with-floor {
+  border-bottom: 1px solid #d4d4d4;
+}

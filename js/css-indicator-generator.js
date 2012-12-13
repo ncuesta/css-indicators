@@ -11,6 +11,11 @@
         'bouncer': {
             content: '<span class="ball"></span>',
             usesMultiplier: false
+        },
+        // Pulsar theme
+        'pulsar': {
+            content: '<span class="ball"></span>',
+            usesMultiplier: false
         }
     };
 
