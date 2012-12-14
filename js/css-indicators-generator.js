@@ -1,31 +1,5 @@
-(function ($) {
-    // Themes definition hash
-    var themes = {
-        // Spinner theme
-        'spinner': {
-            content: '<span class="bar"></span>',
-            usesMultiplier: true,
-            multiplierOption: 'bars'
-        },
-        // Bouncer theme
-        'bouncer': {
-            content: '<span class="ball"></span>'
-        },
-        // Pulsar theme
-        'pulsar': {
-            content: '<span class="ball"></span>'
-        },
-        // Squared theme
-        'squared': {
-            content: '<span class="square"></span>'
-        },
-        // Loopy theme
-        'loopy': {
-            content: ''
-        }
-    };
-
-    // Indicators constructor.
+(function ($, themes) {
+    // Indicator constructor.
     var Indicator = function (element, options) {
         this.options = $.extend({}, $.fn.indicator.defaults, options);
         this.$target = $(element);
@@ -49,11 +23,11 @@
     // @return string
     Indicator.prototype.getContent = function () {
         var themeInfo = themes[this.options.theme],
-            content = themeInfo.content,
+            content   = themeInfo.content,
             times;
 
         if (themeInfo.usesMultiplier) {
-            times = this.options[themeInfo.multiplierOption] + 1;
+            times   = this.options[themeInfo.multiplierOption] + 1;
             content = new Array(times).join(content);
         }
 
@@ -69,15 +43,13 @@
     //   // Just indicating the theme
     //   $('#my-indicator').indicator('bouncer');
     //   // Indicating a hash of options
-    //   $('#my-indicator').indicator({ theme: 'bouncer', size: 'small' });
+    //   $('#my-indicator').indicator({ theme: 'loopy', size: 'small' });
     // </code>
     $.fn.indicator = function (opts) {
-        var options = {};
+        var options = { theme: opts };
 
-        if (typeof opts == 'string') {
-            options.theme = opts;
-        } else {
-            options = typeof opts == 'object' && opts;
+        if (typeof opts == 'object') {
+            options = opts;
         }
 
         return this.each(function () {
@@ -91,4 +63,32 @@
         extra: '',          // Extra classes to define on the container.
         bars:  9            // Only valid for the 'spinner' theme.
     };
-})(window.jQuery);
+})
+(
+    window.jQuery,
+    // Themes definitions
+    {
+        // Spinner theme
+        'spinner': {
+            content:          '<span class="bar"></span>',
+            usesMultiplier:   true,
+            multiplierOption: 'bars'
+        },
+        // Bouncer theme
+        'bouncer': {
+            content: '<span class="ball"></span>'
+        },
+        // Pulsar theme
+        'pulsar': {
+            content: '<span class="ball"></span>'
+        },
+        // Squared theme
+        'squared': {
+            content: '<span class="square"></span>'
+        },
+        // Loopy theme
+        'loopy': {
+            content: ''
+        }
+    }
+);
