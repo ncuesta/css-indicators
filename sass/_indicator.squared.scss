@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+// _indicator.squared.scss
+//
+// Pure CSS3 indicator styles - Squared theme.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+@import "partials/vars";
+@import "partials/mixins";
+
+// ------------------------------------------------------------------
+//                   Animation keyframes definition
+// ------------------------------------------------------------------
+@include regular-animation(squared) {
+    0%  { top:  5%; left:  5%; }
+    25% { top:  5%; left: 75%; }
+    50% { top: 75%; left: 75%; }
+    75% { top: 75%; left:  5%; }
+}
+
+// ------------------------------------------------------------------
+//                  Squared theme styles definition
+// ------------------------------------------------------------------
+.#{$base-class}.squared {
+    overflow:   hidden;
+
+    .square {
+        @include animation(squared, $duration, infinite, ease-out);
+        position:       absolute;
+        top:            5%;
+        left:           5%;
+        display:        inline-block;
+        height:         20%;
+        width:          20%;
+        background:     $color;
+    }
+}

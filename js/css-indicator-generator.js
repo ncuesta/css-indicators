@@ -16,6 +16,11 @@
         'pulsar': {
             content: '<span class="ball"></span>',
             usesMultiplier: false
+        },
+        // Squared theme
+        'squared': {
+            content: '<span class="square"></span>',
+            usesMultiplier: false
         }
     };
 

@@ -27,7 +27,7 @@
        -moz-transform: rotate(#{$degrees}deg) translate($x, $y);
         -ms-transform: rotate(#{$degrees}deg) translate($x, $y);
          -o-transform: rotate(#{$degrees}deg) translate($x, $y);
-            transform: rotate(#{$degrees}deg) translate($x, $y);  
+            transform: rotate(#{$degrees}deg) translate($x, $y);
 }
 
 @mixin transform-origin($x: 50%, $y: 50%, $z: 0) {
@@ -36,6 +36,21 @@
         -ms-transform-origin: $x $y $z;
          -o-transform-origin: $x $y $z;
             transform-origin: $x $y $z;
+}
+
+@mixin regular-animation($name) {
+    @-webkit-keyframes $name {
+        @content;
+    }
+    @-moz-keyframes $name {
+        @content;
+    }
+    @-o-keyframes $name {
+        @content;
+    }
+    @keyframes $name {
+        @content;
+    }
 }
 
 @mixin animation($name, $duration: 1s, $loop: infinite, $easing: linear) {

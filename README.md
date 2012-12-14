@@ -57,7 +57,7 @@ jQuery(function($) {
 
 The available options for the plugin are:
 
-* `theme`: The theme to use: `'spinner'` (default), `'bouncer'` or `'pulsar'`.
+* `theme`: The theme to use: `'spinner'` (default), `'bouncer'`, `'pulsar'` or `'squared'`.
 * `size`: The size: `'small'`, `'medium'`, `'normal'` (default), `'large'`, `'x-large'`.
 * `extra`: Extra classes to define on the container. Defaults to `''` (an empty string).
 * `bars`:  Number of child bars to add to the `spinner` theme. Only valid for that theme. Defaults to `9`.
@@ -143,6 +143,27 @@ described in the next section might change for your particular use case):
 #### The CSS
 
 This indicator uses the `.pulsar` class and has no further configuration through classes.
+
+### Squared
+
+This theme displays a square moving in the shape of a bigger square.
+
+#### The markup
+
+This indicator requires the following markup (please note that the specific classes
+described in the next section might change for your particular use case):
+
+```html
+<!-- Squared needs a container element -->
+<span class="indicator squared normal">
+    <!-- And the square that will be moving inside -->
+    <span class="square"></span>
+</span>
+```
+
+#### The CSS
+
+This indicator uses the `.square` class and has no further configuration through classes.
 
 ## License
 
