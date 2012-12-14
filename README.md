@@ -57,7 +57,7 @@ jQuery(function($) {
 
 The available options for the plugin are:
 
-* `theme`: The theme to use: `'spinner'` (default), `'bouncer'`, `'pulsar'` or `'squared'`.
+* `theme`: The theme to use - `'spinner'` by default, but could be any of the themes listed below.
 * `size`: The size: `'small'`, `'medium'`, `'normal'` (default), `'large'`, `'x-large'`.
 * `extra`: Extra classes to define on the container. Defaults to `''` (an empty string).
 * `bars`:  Number of child bars to add to the `spinner` theme. Only valid for that theme. Defaults to `9`.
@@ -163,7 +163,28 @@ described in the next section might change for your particular use case):
 
 #### The CSS
 
-This indicator uses the `.square` class and has no further configuration through classes.
+This indicator uses the `.squared` class and has no further configuration through classes.
+
+### Loopy
+
+This theme displays a square in a loopy rotation.
+
+#### The markup
+
+This indicator requires the following markup (please note that the specific classes
+described in the next section might change for your particular use case):
+
+```html
+<!-- Loopy only uses a container element -->
+<span class="indicator loopy normal">
+    <!-- So no children allowed in here, old sport! -->
+</span>
+```
+
+#### The CSS
+
+This indicator uses the `.loopy` class and can optionally have slightly rounded corners
+if you use the `.rounded` class.
 
 ## License
 

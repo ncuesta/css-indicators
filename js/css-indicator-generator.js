@@ -9,18 +9,19 @@
         },
         // Bouncer theme
         'bouncer': {
-            content: '<span class="ball"></span>',
-            usesMultiplier: false
+            content: '<span class="ball"></span>'
         },
         // Pulsar theme
         'pulsar': {
-            content: '<span class="ball"></span>',
-            usesMultiplier: false
+            content: '<span class="ball"></span>'
         },
         // Squared theme
         'squared': {
-            content: '<span class="square"></span>',
-            usesMultiplier: false
+            content: '<span class="square"></span>'
+        },
+        // Loopy theme
+        'loopy': {
+            content: ''
         }
     };
 

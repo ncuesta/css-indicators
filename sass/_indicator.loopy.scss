@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+// _indicator.loopy.scss
+//
+// Pure CSS3 indicator styles - Loopy theme.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+@import "partials/vars";
+@import "partials/mixins";
+
+// ------------------------------------------------------------------
+//                   Animation keyframes definition
+// ------------------------------------------------------------------
+@-webkit-keyframes loopy {
+    0%  { -webkit-transform: rotate(  0deg); }
+    5%  { -webkit-transform: rotate(-45deg); }
+    25% { -webkit-transform: rotate( 85deg); }
+    50% { -webkit-transform: rotate( 90deg); }
+}
+@-moz-keyframes loopy {
+    0%  { -moz-transform: rotate(  0deg); }
+    5%  { -moz-transform: rotate(-45deg); }
+    25% { -moz-transform: rotate( 85deg); }
+    50% { -moz-transform: rotate( 90deg); }
+}
+@-o-keyframes loopy {
+    0%  { -o-transform: rotate(  0deg); }
+    5%  { -o-transform: rotate(-45deg); }
+    25% { -o-transform: rotate( 85deg); }
+    50% { -o-transform: rotate( 90deg); }
+}
+@keyframes loopy {
+    0%  { transform: rotate(  0deg); }
+    5%  { transform: rotate(-45deg); }
+    25% { transform: rotate( 85deg); }
+    50% { transform: rotate( 90deg); }
+}
+
+// ------------------------------------------------------------------
+//                  Loopy theme styles definition
+// ------------------------------------------------------------------
+.#{$base-class}.loopy {
+    @include animation(loopy, $duration, infinite, ease-out);
+    background: $color;
+
+    &.rounded {
+        border-radius: 10%;
+    }
+}
