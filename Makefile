@@ -1,10 +1,12 @@
 SRC      = sass
-SRC_FILE = $(SRC)/indicator.scss
+SRC_FILE = $(SRC)/css-indicators.scss
 JS_DIR   = js
-JS_FILE  = $(JS_DIR)/css-indicator-generator.js
+JS_FILE  = $(JS_DIR)/css-indicators-generator.js
 OUTPUT   = build
+CSS_FILE = $(OUTPUT)/css-indicators.css
+MIN_FILE = $(OUTPUT)/css-indicators.min.css
 
-JS_MIN_FILE = $(JS_DIR)/css-indicator-generator.min.js
+JS_MIN_FILE = $(JS_DIR)/css-indicators-generator.min.js
 JS_TMP_FILE = $(JS_MIN_FILE)-tmp
 COPYRIGHTJS = $(JS_DIR)/copyright.js
 
@@ -13,11 +15,11 @@ clean:
 		@echo "Cleaning output directory... done"
 
 css:
-		@sass --style expanded $(SRC_FILE):$(OUTPUT)/indicator.css
+		@sass --style expanded $(SRC_FILE):$(CSS_FILE)
 		@echo "Compiling SCSS files to CSS... done"
 
 css-min:
-		@sass --update --style compressed $(SRC_FILE):$(OUTPUT)/indicator.min.css
+		@sass --update --style compressed $(SRC_FILE):$(MIN_FILE)
 		@echo "Compiling SCSS files to minified CSS... done"
 
 js-hint:

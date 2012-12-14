@@ -4,7 +4,7 @@ Pure CSS3 work indicators (a.k.a. Ajax loaders).
 
 ## Usage
 
-Download either [the minified](https://raw.github.com/ncuesta/css-indicators/master/build/indicator.min.css) or [the regular](https://raw.github.com/ncuesta/css-indicators/master/build/indicator.css) version of the CSS file and include it in your page:
+Download either [the minified](https://raw.github.com/ncuesta/css-indicators/master/build/css-indicators.min.css) or [the regular](https://raw.github.com/ncuesta/css-indicators/master/build/css-indicators.css) version of the CSS file and include it in your page:
 
 ```html
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ Download either [the minified](https://raw.github.com/ncuesta/css-indicators/mas
 <head>
     <meta charset="utf-8">
     <!-- This is the important bit -->
-    <link rel="stylesheet" media="screen" href="css/indicator.min.css" />
+    <link rel="stylesheet" media="screen" href="css/css-indicators.min.css" />
 </head>
 <body>
 </body>
@@ -33,8 +33,8 @@ optionally specified with a couple of options.
 ### Usage
 
 After you've included the CSS file for the indicators, you will need to add
-[the JS file](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicator-generator.js)
-or its [minified version](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicator-generator.min.js)
+[the JS file](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicators-generator.js)
+or its [minified version](https://raw.github.com/ncuesta/css-indicators/master/js/css-indicators-generator.min.js)
 to your jQuery-enabled page. **Remember to add it after your jQuery `<script>` tag!**
 
 Once you have included the JS file, you can then use it with any existing element on the page:
