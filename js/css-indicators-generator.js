@@ -58,10 +58,11 @@
     };
     $.fn.indicator.Constructor = Indicator;
     $.fn.indicator.defaults = {
-        theme: 'spinner',   // The theme to use: 'spinner' or 'bouncer'.
-        size:  'normal',    // The size: 'small', 'medium', 'normal', 'large', 'x-large'.
-        extra: '',          // Extra classes to define on the container.
-        bars:  9            // Only valid for the 'spinner' theme.
+        theme:  'spinner',  // The theme to use: 'spinner' or 'bouncer'.
+        size:   'normal',   // The size: 'small', 'medium', 'normal', 'large', 'x-large'.
+        extra:  '',         // Extra classes to define on the container.
+        bars:   9,          // Only valid for the 'spinner' theme.
+        blocks: 3           // Only vsalid for the 'fblocks' theme.
     };
 })
 (
@@ -89,6 +90,12 @@
         // Loopy theme
         'loopy': {
             content: ''
+        },
+        // FBlocks theme
+        'fblocks': {
+            content:          '<span class="block"></span>',
+            usesMultiplier:   true,
+            multiplierOption: 'blocks'
         }
     }
 );
