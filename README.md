@@ -186,6 +186,29 @@ described in the next section might change for your particular use case):
 This indicator uses the `.loopy` class and can optionally have slightly rounded corners
 if you use the `.rounded` class.
 
+### FBlocks
+
+This theme displays a facebook-like blocks animation.
+
+#### The markup
+
+This indicator requires the following markup (please note that the specific classes
+described in the next section might change for your particular use case):
+
+```html
+<!-- FBlocks uses a container element -->
+<span class="indicator fblocks normal">
+    <!-- And  three inner blocks -->
+    <span class="block"></span>
+    <span class="block"></span>
+    <span class="block"></span>
+</span>
+```
+
+#### The CSS
+
+This indicator uses only the `.fblocks` class.
+
 ## License
 
 **css-indicators** is licensed under the **MIT** License. Here you have the boring
