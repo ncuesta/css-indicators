@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+// _indicator.fblocks.scss
+//
+// Pure CSS3 indicator styles - FBlocks theme.
+//
+// @author José Nahuel Cuesta Luengo <nahuelcuestaluengo@gmail.com>
+
+@import "partials/vars";
+@import "partials/mixins";
+
+// ------------------------------------------------------------------
+//                   Animation keyframes definition
+// ------------------------------------------------------------------
+@include regular-animation(fblocks) {
+    0%, 40%, {
+        height:       80%;
+        margin:       10% 2.5%;
+        width:        20%;
+        background:   lighten($color, 50%);
+        border-color: lighten($color, 35%);
+    }
+    30% {
+        height:       90%;
+        margin:       5% 2.5%;
+        width:        30%;
+        background:   lighten($color, 5%);
+        border-color: darken($color, 5%);
+        z-index:      1;
+    }
+}
+
+// ------------------------------------------------------------------
+//                  FBlocks theme styles definition
+// ------------------------------------------------------------------
+.#{$base-class}.fblocks {
+    text-align: center;
+    overflow:   hidden;
+
+    .block {
+        @include animation(fblocks, $duration, infinite, linear);
+        @include box-sizing(border-box);
+        display:    inline-block;
+        height:     80%;
+        margin:     10% 2.5%;
+        width:      20%;
+        background: lighten($color, 50%);
+        z-index:    0;
+        border: {
+            style: solid;
+            width: 2px;
+            color: lighten($color, 35%);
+        };
+
+        @for $index from 1 through 3 {
+            &:nth-child(#{$index}n) {
+                @include animation-delay($index * $duration / 3);
+                left: 20% * $index;
+            }
+        }
+    }
+}
